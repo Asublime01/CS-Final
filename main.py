@@ -169,6 +169,7 @@ def arena_battle(knight, archer, mage, enemy1_dead, enemy2_dead, enemy3_dead, at
 """
                     print(health_display)
                     if enemy1.health <= 0:
+                        enemy1.health = 0
                         print("You defeated Enemy 1!")
                         enemy1_dead = True
                 elif attacking == 2 and not enemy2_dead:
@@ -184,6 +185,7 @@ def arena_battle(knight, archer, mage, enemy1_dead, enemy2_dead, enemy3_dead, at
 """
                     print(health_display)
                     if enemy2.health <= 0:
+                        enemy2.health = 0
                         print("You defeated Enemy 2")
                         enemy2_dead = True
                 elif attacking == 3 and not enemy3_dead:
@@ -199,6 +201,7 @@ def arena_battle(knight, archer, mage, enemy1_dead, enemy2_dead, enemy3_dead, at
 """
                     print(health_display)
                     if enemy3.health <= 0:
+                        enemy3.health = 0
                         print("You defeated Enemy 3")
                         enemy3_dead = True
                 else:
@@ -217,6 +220,7 @@ def arena_battle(knight, archer, mage, enemy1_dead, enemy2_dead, enemy3_dead, at
 """
                     print(health_display)
                     if enemy1.health <= 0:
+                        enemy1.health = 0
                         print("You defeated Enemy 1!")
                         enemy1_dead = True
                 elif attacking == 2 and not enemy2_dead:
@@ -232,6 +236,7 @@ def arena_battle(knight, archer, mage, enemy1_dead, enemy2_dead, enemy3_dead, at
 """
                     print(health_display)
                     if enemy2.health <= 0:
+                        enemy2.health = 0
                         print("You defeated Enemy 2")
                         enemy2_dead = True
                 elif attacking == 3 and not enemy3_dead:
@@ -247,6 +252,7 @@ def arena_battle(knight, archer, mage, enemy1_dead, enemy2_dead, enemy3_dead, at
 """
                     print(health_display)
                     if enemy3.health <= 0:
+                        enemy3.health = 0
                         print("You defeated Enemy 3")
                         enemy3_dead = True
                 else:
@@ -265,12 +271,15 @@ def arena_battle(knight, archer, mage, enemy1_dead, enemy2_dead, enemy3_dead, at
                 print(health_display)
                 player = False
                 if enemy1.health <= 0:
+                    enemy1.health = 0
                     print("You defeated Enemy1")
                     enemy1_dead = True
                 if enemy2.health <= 0:
+                    enemy2.health = 0
                     print("You defeated Enemy2")
                     enemy2_dead = True
                 if enemy3.health <= 0:
+                    enemy3.health = 0
                     enemy3_dead = True
                     print("You defeated Enemy3")
             else:
@@ -304,6 +313,7 @@ def arena_battle(knight, archer, mage, enemy1_dead, enemy2_dead, enemy3_dead, at
 """
                     print(health_display)
                     if enemy1.health <= 0:
+                        enemy1.health = 0
                         print("You defeated Enemy 1!")
                         enemy1_dead = True
                 elif attacking == 2 and not enemy2_dead:
@@ -319,6 +329,7 @@ def arena_battle(knight, archer, mage, enemy1_dead, enemy2_dead, enemy3_dead, at
 """
                     print(health_display)
                     if enemy2.health <= 0:
+                        enemy2.health = 0
                         print("You defeated Enemy2")
                         enemy2_dead = True
                 elif attacking == 3 and not enemy3_dead:
@@ -334,6 +345,7 @@ def arena_battle(knight, archer, mage, enemy1_dead, enemy2_dead, enemy3_dead, at
 """
                     print(health_display)
                     if enemy3.health <= 0:
+                        enemy3.health = 0
                         print("You defeated Enemy 3")
                         enemy3_dead = True
                 else:
@@ -352,6 +364,7 @@ def arena_battle(knight, archer, mage, enemy1_dead, enemy2_dead, enemy3_dead, at
 """
                     print(health_display)
                     if enemy1.health <= 0:
+                        enemy1.health = 0
                         print("You defeated Enemy 1!")
                         enemy1_dead = True
                 elif attacking == 2 and not enemy2_dead:
@@ -367,6 +380,7 @@ def arena_battle(knight, archer, mage, enemy1_dead, enemy2_dead, enemy3_dead, at
 """
                     print(health_display)
                     if enemy2.health <= 0:
+                        enemy2.health = 0
                         print("You defeated Enemy2")
                         enemy2_dead = True
                 elif attacking == 3 and not enemy3_dead:
@@ -382,6 +396,7 @@ def arena_battle(knight, archer, mage, enemy1_dead, enemy2_dead, enemy3_dead, at
 """
                     print(health_display)
                     if enemy3.health <= 0:
+                        enemy3.health = 0
                         print("You defeated Enemy 3")
                         enemy3_dead = True
                 else:
@@ -419,6 +434,7 @@ def arena_battle(knight, archer, mage, enemy1_dead, enemy2_dead, enemy3_dead, at
 """
                     print(health_display)
                     if enemy1.health <= 0:
+                        enemy1.health = 0
                         print("You defeated Enemy 1!")
                         enemy1_dead = True
                 elif attacking == 2 and not enemy2_dead:
@@ -434,6 +450,7 @@ def arena_battle(knight, archer, mage, enemy1_dead, enemy2_dead, enemy3_dead, at
 """
                     print(health_display)
                     if enemy2.health <= 0:
+                        enemy2.health = 0
                         print("You defeated Enemy2")
                         enemy2_dead = True
                 elif attacking == 3 and not enemy3_dead:
@@ -449,6 +466,7 @@ def arena_battle(knight, archer, mage, enemy1_dead, enemy2_dead, enemy3_dead, at
 """
                     print(health_display)
                     if enemy3.health <= 0:
+                        enemy3.health = 0
                         print("You defeated Enemy 3")
                         enemy3_dead = True
                 else:
@@ -457,16 +475,19 @@ def arena_battle(knight, archer, mage, enemy1_dead, enemy2_dead, enemy3_dead, at
                 if attacking == 1 and not enemy1_dead:
                     print(f"Knight performs Shield Bash on Enemy 1. -{knight.shield_bash(enemy1)} Defense")
                     if enemy1.health <= 0:
+                        enemy1.health = 0
                         print("You defeated Enemy 1!")
                         enemy1_dead = True
                 elif attacking == 2 and not enemy2_dead:
                     print(f"Knight performs Shield Bash on Enemy 2. -{knight.shield_bash(enemy2)} Defense")
                     if enemy2.health <= 0:
+                        enemy2.health = 0
                         print("You defeated Enemy2")
                         enemy2_dead = True
                 elif attacking == 3 and not enemy3_dead:
                     print(f"Knight performs Shield Bash on Enemy 3. -{knight.shield_bash(enemy3)} Defense")
                     if enemy3.health <= 0:
+                        enemy3.health = 0
                         print("You defeated Enemy 3")
                         enemy3_dead = True
                 else:
@@ -485,6 +506,7 @@ def arena_battle(knight, archer, mage, enemy1_dead, enemy2_dead, enemy3_dead, at
 """
                     print(health_display)
                     if enemy1.health <= 0:
+                        enemy1.health = 0
                         print("You defeated Enemy 1!")
                         enemy1_dead = True
                 elif attacking == 2 and not enemy2_dead:
@@ -500,6 +522,7 @@ def arena_battle(knight, archer, mage, enemy1_dead, enemy2_dead, enemy3_dead, at
 """
                     print(health_display)
                     if enemy2.health <= 0:
+                        enemy2.health = 0
                         print("You defeated Enemy2")
                         enemy2_dead = True
                 elif attacking == 3 and not enemy3_dead:
@@ -515,6 +538,7 @@ def arena_battle(knight, archer, mage, enemy1_dead, enemy2_dead, enemy3_dead, at
 """
                     print(health_display)
                     if enemy3.health <= 0:
+                        enemy3.health = 0
                         print("You defeated Enemy 3")
                         enemy3_dead = True
                 else:
@@ -531,7 +555,8 @@ def arena_battle(knight, archer, mage, enemy1_dead, enemy2_dead, enemy3_dead, at
             enemy_options.remove("Enemy3")
         if len(enemy_options) == 0:
             player_won = True
-            break
+            player_died = False
+            return player_died, player_won
         
         #if len(atk_list) == 0:
         #    print("Game Over.")
@@ -721,29 +746,10 @@ def arena_battle(knight, archer, mage, enemy1_dead, enemy2_dead, enemy3_dead, at
             print("You died.")
             alive = False
             player_died = True
-            break
-if player_died:
-    print("""\n
-       _____          __  __ ______     ______      ________ _____  
-      / ____|   /\   |  \/  |  ____|   / __ \ \    / /  ____|  __ \ 
-     | |  __   /  \  | \  / | |__     | |  | \ \  / /| |__  | |__) |
-     | | |_ | / /\ \ | |\/| |  __|    | |  | |\ \/ / |  __| |  _  / 
-     | |__| |/ ____ \| |  | | |____   | |__| | \  /  | |____| | \ \ 
-      \_____/_/    \_\_|  |_|______|   \____/   \/   |______|_|  \_|
+            player_won = False
+            return player_died, player_won
+            
 
-                        IT LOOKS LIKE YOU DIED :(
-              MAYBE YOU SHOULD DO BETTER NEXT TIME :P
-    """)
-elif player_won:
-    print("""
- __   __   ___     ___    _____    ___     ___   __   __ 
- \ \ / /  |_ _|   / __|  |_   _|  / _ \   | _ \  \ \ / / 
-  \ V /    | |   | (__     | |   | (_) |  |   /   \ V /  
-  _\_/_   |___|   \___|   _|_|_   \___/   |_|_\   _|_|_  
-
-                GOOD JOB!! YOU BEAT THE GAME
-                    THANKS FOR PLAYING!
-""")
 
 
 
@@ -824,7 +830,29 @@ while run:
     if user == "start battle":
         print("Prepare for battle!")
         time.sleep(3)
-        arena_battle(knight, archer, mage, enemy1_dead, enemy2_dead, enemy3_dead, atk_list)
+        player_died, player_won = arena_battle(knight, archer, mage, enemy1_dead, enemy2_dead, enemy3_dead, atk_list)
+        if player_died:
+            print("""\n
+       _____          __  __ ______     ______      ________ _____  
+      / ____|   /\   |  \/  |  ____|   / __ \ \    / /  ____|  __ \ 
+     | |  __   /  \  | \  / | |__     | |  | \ \  / /| |__  | |__) |
+     | | |_ | / /\ \ | |\/| |  __|    | |  | |\ \/ / |  __| |  _  / 
+     | |__| |/ ____ \| |  | | |____   | |__| | \  /  | |____| | \ \ 
+      \_____/_/    \_\_|  |_|______|   \____/   \/   |______|_|  \_|
+
+                        IT LOOKS LIKE YOU DIED :(
+              MAYBE YOU SHOULD DO BETTER NEXT TIME :P
+    """)
+        elif player_won:
+            print("""
+__   __   ___     ___    _____    ___     ___   __   __ 
+ \ \ / /  |_ _|   / __|  |_   _|  / _ \   | _ \  \ \ / / 
+  \ V /    | |   | (__     | |   | (_) |  |   /   \ V /  
+  _\_/_   |___|   \___|   _|_|_   \___/   |_|_\   _|_|_  
+
+                GOOD JOB!! YOU BEAT THE GAME
+                    THANKS FOR PLAYING!
+""")
     elif user == "quit":
         break
     else:
