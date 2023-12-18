@@ -60,7 +60,7 @@ class Archer:
         enemy.health -= damage_to_enemy
         return damage_to_enemy
     def precise_aim(self, enemy):
-        damage_to_enemy = self.base_damage * 1.5
+        damage_to_enemy = (self.base_damage * 1.5) // 1
         enemy.health -= damage_to_enemy
         return damage_to_enemy
     def trick_shot(self, enemy, enemy2, enemy3):
@@ -125,7 +125,7 @@ class Enemy3:
         return damage_to_enemy
     
 
-def arena_battle(knight, archer, mage, enemy1_dead, enemy2_dead, enemy3_dead):
+def arena_battle(knight, archer, mage, enemy1_dead, enemy2_dead, enemy3_dead, atk_list):
     print(arena_trios_display)
     print("Welcome to the Trios Arena!")
     print("Do anything you need to keep you and your team ALIVE.")
@@ -519,7 +519,6 @@ def arena_battle(knight, archer, mage, enemy1_dead, enemy2_dead, enemy3_dead):
             else:
                 print("Invalid attack selection")
         
-        atk_list = ["mage", "archer", "knight"]
         enemy_options = ["Enemy1", "Enemy2", "Enemy3"]
         if enemy1_dead:
             enemy_options.remove("Enemy1")
@@ -530,21 +529,25 @@ def arena_battle(knight, archer, mage, enemy1_dead, enemy2_dead, enemy3_dead):
         if len(enemy_options) == 0:
             print("You won!!!!")
             break
-        if mage.health <= 0:
-            atk_list.remove("mage")
-        elif knight.health <= 0:
-            atk_list.remove("knight")
-        elif archer.health <= 0:
-            atk_list.remove("archer")
-        if len(atk_list) == 0:
-            print("Game Over.")
-            alive = False
-            break
+        
+        #if len(atk_list) == 0:
+        #    print("Game Over.")
+        #    alive = False
+        #    break
+        
         enemy_atk = random.choice(atk_list)
         enemy_using = random.choice(enemy_options)
+        print(atk_list)
         if enemy_using == enemy_options[0]: #Enemy 1
-            if enemy_atk == atk_list[0]: #Mage
+            if enemy_atk == "mage": #Mage
                 print(f"Enemy 1 attacks Mage. - {enemy1.attack(mage)} DMG\n")
+                if mage.health <= 0:
+                    mage.health = 0
+                    if "mage" in atk_list:
+                        atk_list.remove("mage")
+                        print(atk_list)
+                    else:
+                        pass
                 health_display = f"""
     ##################################################################################
     Archer| Health: {archer.health}         |          Enemy 1| Health: {enemy1.health}
@@ -555,8 +558,15 @@ def arena_battle(knight, archer, mage, enemy1_dead, enemy2_dead, enemy3_dead):
     ##################################################################################
 """
                 print(health_display)
-            elif enemy_atk == atk_list[1]: #Archer
+            elif enemy_atk == "archer": #Archer
                 print(f"Enemy 1 attacks Archer. - {enemy1.attack(archer)} DMG\n")
+                if archer.health <= 0:
+                    archer.health = 0
+                    if "archer" in atk_list:
+                        atk_list.remove("archer")
+                        print(atk_list)
+                    else:
+                        pass
                 health_display = f"""
     ##################################################################################
     Archer| Health: {archer.health}         |          Enemy 1| Health: {enemy1.health}
@@ -567,8 +577,15 @@ def arena_battle(knight, archer, mage, enemy1_dead, enemy2_dead, enemy3_dead):
     ##################################################################################
 """
                 print(health_display)
-            elif enemy_atk == atk_list[2]: #Knight
+            elif enemy_atk == "knight": #Knight
                 print(f"Enemy 1 attacks Knight. - {enemy1.attack(knight)} DMG\n")
+                if knight.health <= 0:
+                    knight.health = 0
+                    if "knight" in atk_list:
+                        atk_list.remove("knight")
+                        print(atk_list)
+                    else:
+                        pass
                 health_display = f"""
     ##################################################################################
     Archer| Health: {archer.health}         |          Enemy 1| Health: {enemy1.health}
@@ -580,8 +597,15 @@ def arena_battle(knight, archer, mage, enemy1_dead, enemy2_dead, enemy3_dead):
 """
                 print(health_display)
         elif enemy_using == enemy_options[1]: #Enemy 2
-            if enemy_atk == atk_list[0]: #Mage
+            if enemy_atk == "mage": #Mage
                 print(f"Enemy 2 attacks Mage. - {enemy2.attack(mage)} DMG\n")
+                if mage.health <= 0:
+                    mage.health = 0
+                    if "mage" in atk_list:
+                        atk_list.remove("mage")
+                        print(atk_list)
+                    else:
+                        pass
                 health_display = f"""
     ##################################################################################
     Archer| Health: {archer.health}         |          Enemy 1| Health: {enemy1.health}
@@ -592,8 +616,15 @@ def arena_battle(knight, archer, mage, enemy1_dead, enemy2_dead, enemy3_dead):
     ##################################################################################
 """
                 print(health_display)
-            elif enemy_atk == atk_list[1]: #Archer
-                print(f"Enemy 2 attacks Knight. - {enemy1.attack(knight)} DMG\n")
+            elif enemy_atk == "archer": #Archer
+                print(f"Enemy 2 attacks Archer. - {enemy1.attack(archer)} DMG\n")
+                if archer.health <= 0:
+                    archer.health = 0
+                    if "archer" in atk_list:
+                        atk_list.remove("archer")
+                        print(atk_list)
+                    else:
+                        pass
                 health_display = f"""
     ##################################################################################
     Archer| Health: {archer.health}         |          Enemy 1| Health: {enemy1.health}
@@ -604,8 +635,15 @@ def arena_battle(knight, archer, mage, enemy1_dead, enemy2_dead, enemy3_dead):
     ##################################################################################
 """
                 print(health_display)
-            elif enemy_atk == atk_list[2]: #Knight
+            elif enemy_atk == "knight": #Knight
                 print(f"Enemy 2 attacks Knight. - {enemy2.attack(knight)} DMG\n")
+                if knight.health <= 0:
+                    knight.health = 0
+                    if "knight" in atk_list:
+                        atk_list.remove("knight")
+                        print(atk_list)
+                    else:
+                        pass
                 health_display = f"""
     ##################################################################################
     Archer| Health: {archer.health}         |          Enemy 1| Health: {enemy1.health}
@@ -617,8 +655,15 @@ def arena_battle(knight, archer, mage, enemy1_dead, enemy2_dead, enemy3_dead):
 """
                 print(health_display)
         elif enemy_using == enemy_options[2]: #Enemy 3
-            if enemy_atk == atk_list[0]: #Mage
+            if enemy_atk == "mage": #Mage
                 print(f"Enemy 3 attacks Mage. - {enemy3.attack(mage)} DMG\n")
+                if mage.health <= 0:
+                    mage.health = 0
+                    if "mage" in atk_list:
+                        atk_list.remove("mage")
+                        print(atk_list)
+                    else:
+                        pass
                 health_display = f"""
     ##################################################################################
     Archer| Health: {archer.health}         |          Enemy 1| Health: {enemy1.health}
@@ -629,8 +674,15 @@ def arena_battle(knight, archer, mage, enemy1_dead, enemy2_dead, enemy3_dead):
     ##################################################################################
 """
                 print(health_display)
-            elif enemy_atk == atk_list[1]: #Archer
+            elif enemy_atk == "archer": #Archer
                 print(f"Enemy 3 attacks Archer. - {enemy3.attack(archer)} DMG\n")
+                if archer.health <= 0:
+                    archer.health = 0
+                    if "archer" in atk_list:
+                        atk_list.remove("archer")
+                        print(atk_list)
+                    else:
+                        pass
                 health_display = f"""
     ##################################################################################
     Archer| Health: {archer.health}         |          Enemy 1| Health: {enemy1.health}
@@ -641,8 +693,15 @@ def arena_battle(knight, archer, mage, enemy1_dead, enemy2_dead, enemy3_dead):
     ##################################################################################
 """
                 print(health_display)
-            elif enemy_atk == atk_list[2]: #Knight
+            elif enemy_atk == "knight": #Knight
                 print(f"Enemy 3 attacks Knight. - {enemy3.attack(knight)} DMG\n")
+                if knight.health <= 0:
+                    knight.health = 0
+                    if "knight" in atk_list:
+                        atk_list.remove("knight")
+                        print(atk_list)
+                    else:
+                        pass
                 health_display = f"""
     ##################################################################################
     Archer| Health: {archer.health}         |          Enemy 1| Health: {enemy1.health}
@@ -653,7 +712,8 @@ def arena_battle(knight, archer, mage, enemy1_dead, enemy2_dead, enemy3_dead):
     ##################################################################################
 """
                 print(health_display)
-        
+
+            
         if knight.health <= 0 and mage.health <= 0 and archer.health <= 0: 
             print("You died.")
             alive = False
@@ -678,9 +738,11 @@ enemy3 = Enemy3(100, 15, 10)
 global enemy1_dead
 global enemy2_dead
 global enemy3_dead 
+global atk_list
 enemy1_dead = False
 enemy2_dead = False
 enemy3_dead = False
+atk_list = ["mage", "archer", "knight"]
 
 
     
@@ -697,7 +759,7 @@ while run:
     if user == "start battle":
         print("Prepare for battle!")
         time.sleep(3)
-        arena_battle(knight, archer, mage, enemy1_dead, enemy2_dead, enemy3_dead)
+        arena_battle(knight, archer, mage, enemy1_dead, enemy2_dead, enemy3_dead, atk_list)
     elif user == "quit":
         break
     elif user == "stats":
